@@ -1,0 +1,15 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}Comentários{% endblock %}
+
+{% block content %}
+    <h2>Comentários do Artigo: {{ artigo.titulo }}</h2>
+    <ul>
+        {% for comentario in comentarios %}
+            <li>{{ comentario.conteudo }}</li>
+        {% endfor %}
+    </ul>
+    {% if is_editor %}
+        <a href="{% url 'artigos:novo_comentario' %}"><button>Novo Comentário</button></a>
+    {% endif %}
+{% endblock %}

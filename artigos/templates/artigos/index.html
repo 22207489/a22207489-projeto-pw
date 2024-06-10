@@ -1,0 +1,15 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Lista de Autores</h2>
+    <ul>
+        {% for autor in autores %}
+            <li><a href="{% url 'artigos:autor' autor.id %}">{{ autor.nome }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if is_editor %}
+        <a href="{% url 'artigos:novo_autor' %}"><button>Novo Autor</button></a>
+    {% endif %}
+{% endblock %}

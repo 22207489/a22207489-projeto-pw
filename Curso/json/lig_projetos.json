@@ -1,0 +1,98 @@
+[
+  {
+    "nome":"Jogo das Tendas",
+    "descricao": "Desenvolver uma grelha 2D que simule o terreno do jogo, com árvores distribuídas aleatoriamente. Permitir que o jogador coloque tendas junto às árvores, assegurando que cada tenda esteja ligada apenas a uma árvore. Implementar regras para assegurar que as tendas não se toquem, nem mesmo na diagonal, e criar uma interface de linha de comando para a interação do jogador com o jogo.",
+    "conceitos_aplicados": "Programação em Kotlin: ciclos, funções, arrays, arrays2D, leitura do teclado, escrita no ecrã.",
+    "tecnologias_utilizadas": ["Kotlin", "IntelliJ"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Fundamentos de Programação"
+  },
+  {
+    "nome":"Batalha Naval",
+    "descricao": "Desenvolver uma grelha 2D que simule a arena do jogo, com navios e marcadores de jogadas anteriores. Criar uma interface de linha de comando para a interação do jogador com o jogo.",
+    "conceitos_aplicados": "Programação em Kotlin: ciclos, funções, arrays, arrays2D, leitura do teclado, escrita no ecrã.",
+    "tecnologias_utilizadas": ["Kotlin", "IntelliJ"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Fundamentos de Programação"
+  },
+  {
+    "nome":"Fórum no Moodle – discussão & partilha",
+    "descricao": "Implementação e dinamização do módulo de fórum no Moodle para facilitar a discussão e partilha de conhecimentos relacionados com a unidade curricular. O projeto visa a interatividade dos estudantes através da criação, comentário e partilha de tópicos de discussão sobre Marketing e áreas conexas, utilizando o Moodle como plataforma de ensino à distância.",
+    "conceitos_aplicados": "Pesquisa de informação e identificação de tendências. Abordagem a novas tecnologias usadas no Marketing. Relevância da Inteligência Artificial no Marketing Digital",
+    "tecnologias_utilizadas": ["Moodle"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Teoria e Prática de Marketing"
+  },
+  {
+    "nome":"Rock in DEISI",
+    "descricao": "Desenvolver uma aplicação de linhas de comando em Java que permite realizar queries relativamente sofisticadas sobre uma base de dados real contendo informações sobre músicas e artistas dos últimos 100 anos, obtidas de repositórios públicos. A base de dados é representada em ficheiros CSV e os alunos devem implementar estruturas de dados em memória para responder às queries eficientemente.",
+    "conceitos_aplicados": "Algoritmos de ordenação e pesquisa. Estruturas de dados otimizadas para pesquisa como árvores e hashtables. Deteção de bottlenecks. Utilização de otimizações não-algorítmicas como buffering",
+    "tecnologias_utilizadas": ["Java", "IntelliJ", "JUnit", "ChatGPT"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Algoritmia e Estruturas de Dados"
+  },
+  {
+    "nome":"IT in competences development",
+    "descricao": "Desenvolvimento de competências via projetos tecnológicos (apps, jogos, websites), incluindo análise de mercado e estratégias de monetização. Apresentação de 10 minutos para captação de investimento, seguida de avaliação pelos pares.",
+    "conceitos_aplicados": "Critical Thinking, apresentações públicas, personal marketing e desenvolvimento de competências.",
+    "tecnologias_utilizadas": ["Diversas. Ficou ao critério dos alunos a definição dos pressupostos técnicos, não havendo limitações"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Competências Comportamentais"
+  },
+  {
+    "nome":"DEISI Chess",
+    "descricao": "Criação um jogo de Xadrez! Na primeira parte deste projeto os alunos são desafiados a criar a lógica por trás deste jogo, sendo que vão começar apenas a jogar com Reis. Na segunda parte vão ser incorporadas as outras peças de maneira a completar este jogo.",
+    "conceitos_aplicados": "diagramas UML, programação orientada a objetos de acordo com o teorema do encapsulamento",
+    "tecnologias_utilizadas": ["Java", "Kotlin", "JUnit5", "GitHub"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Linguagens de Programação II"
+  },
+   {
+    "nome":"DEISI Jungle",
+    "descricao": "Desenvolver em Java uma aplicação gráfica (desktop) para um jogo de tabuleiro com animais, que envolve estratégia e movimentação baseada em características animais e alimentares O jogo suporta até 4 jogadores, cada um iniciando com um animal diferente, e inclui elementos como alimentação e energia, influenciando a dinâmica do jogo.",
+    "conceitos_aplicados": "Utilização correta de conceitos de programação orientada a objetos como encapsulamento, herança e polimorfismo. Boas práticas de código e design de software, com expectativa de mais de 3000 linhas de código. Planeamento com UML antes da codificação e uso intensivo de testes unitários em JUnit para garantir qualidade.",
+    "tecnologias_utilizadas": ["Java", "Kotlin", "JUnit5", "GitHub", "IntelliJ"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Linguagens de Programação II"
+  },
+  {
+    "nome":"Modelação, ETL e Reporting",
+    "descricao": "Modelação de uma base de dados relacional transformando-a em um modelo dimensional (estrela) usando o Oracle Data Modeler Implementação de processos ETL para transferência e transformação de dados para um Datawarehouse com o Pentaho Data Integration Criação de relatórios e dashboards analíticos com visualizações interativas utilizando o Power BI Desktop, para facilitar a tomada de decisão baseada em dados",
+    "conceitos_aplicados": "Modelação Dimensional – o modelo em Estrela. Extração, transformação e carregamento de dados para um Datawarehouse. Análise de dados – Ferramentas de Reporting",
+    "tecnologias_utilizadas": ["Oracle Data Modeler", "Pentaho Data Integration", "Power BI Desktop"],
+    "imagem": "media/Curso/",
+    "link_youtube": "https://www.youtube.com/watch?v=abc123",
+    "link_github": "https://github.com/seu_usuario/biblioteca",
+    "disciplina": "Sistemas de Suporte à Decisão"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

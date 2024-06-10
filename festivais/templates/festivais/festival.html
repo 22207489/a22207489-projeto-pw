@@ -1,0 +1,25 @@
+{% extends 'festivais/layout.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ festival.nome }}</title>
+    {% block content %}
+
+</head>
+<body>
+    <h1>{{ festival.nome }}</h1>
+
+    <h2>Bands:</h2>
+    <ul>
+        {% for banda in festival.festival.all %}
+            <li>{{ banda.nome }}</li>
+        {% endfor %}
+    </ul>
+
+    <img src='{{ festival.cartaz.url}}' width="150px" style="margin-top: 20px;">
+
+    <a href="{% url 'festivais:festivais' %}" style="display: block; margin-top: 20px;">Go back to Festivais</a>
+</body>
+</html>
+{% endblock %}

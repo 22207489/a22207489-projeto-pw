@@ -1,0 +1,27 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <div class="courses-list">
+        <h2>Explore os nossos cursos</h2>
+        <p>Descubra os cursos disponíveis na DEISI Lusófona:</p>
+
+        <p>Há um total de {{ cursos|length }} curso(s) disponíveis!</p>
+        <ul>
+            {% for curso in cursos %}
+                <li>
+                    <a href="{% url 'curso:curso' curso.id %}" class="course-link">{{ curso }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+
+        {% if request.user.is_authenticated and is_editor %}
+        <a href="{% url 'curso:novo_curso' %}">
+            <input type="submit" value="Criar novo Curso">
+        </a>
+        {% endif %}
+
+
+
+    </div>
+{% endblock %}

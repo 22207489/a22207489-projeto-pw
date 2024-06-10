@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text color */
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .container h3 {
+            margin-top: 0;
+        }
+        .container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .container ul li {
+            margin: 10px 0;
+        }
+        .container a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue button background */
+            color: #ffffff; /* White text color */
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .container a:hover {
+            background-color: #1DB954; /* Spotify Green on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    {% if request.user.is_authenticated %}
+        <h3>Bem-vindo, {{ request.user.first_name }} {{ request.user.last_name }}</h3>
+
+        <ul>
+            <li>Username: {{ request.user.username }}</li>
+            <li>Email: {{ request.user.email }}</li>
+        </ul>
+
+        <a href="{% url 'autenticacao:logout' %}" class="button-logout">Logout</a>
+    {% else %}
+        <h3>Autenticação</h3>
+        <a href="{% url 'autenticacao:registo' %}" class="button-register">Registo</a>
+        <a href="{% url 'autenticacao:login' %}" class="button-login">Login</a>
+    {% endif %}
+    <a href="{% url 'portfolio:landing' %}" class="button-bands">Inicio do projeto</a>
+</div>
+
+</body>
+</html>

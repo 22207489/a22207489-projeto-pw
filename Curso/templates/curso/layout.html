@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Cursos do departamento DEISI da Lusófona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 60px; /* Adjusted padding to accommodate footer */
+        }
+        header {
+            background-color: #007bff; /* Changed header color to blue */
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        h1 {
+            margin: 0;
+        }
+        .nav-buttons {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .nav-buttons a {
+            text-decoration: none;
+        }
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .username {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+        button {
+            background-color: #0056b3; /* Darker button color */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        button i {
+            margin-right: 5px; /* Add space between icon and text */
+        }
+        button:hover {
+            background-color: #004080; /* Darker button color on hover */
+        }
+        main {
+            padding: 20px;
+            padding-bottom: 80px; /* Adjusted padding to accommodate footer */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Cursos do departamento DEISI da Lusófona</h1>
+    <div class="nav-buttons">
+        <a href="{% url 'curso:cursos' %}"><button><i class="material-icons">home</i>Home</button></a>
+        <a href="{% url 'portfolio:landing' %}"><button><i class="material-icons">folder</i>Portfolio</button></a>
+        <a href="{% url 'bandasNovas:bandas' %}"><button><i class="material-icons">library_music</i>Bandas</button></a>
+        <a href="#"><button><i class="material-icons">article</i>Artigos</button></a>
+        <a href="{% url 'meteo:tempo_lisboa' %}"><button><i class="material-icons">wb_sunny</i>Meteorologia</button></a>
+    </div>
+
+    {% if request.user.is_authenticated %}
+        <div class="username">
+            <i class="material-icons">person</i>
+            <a>{{ request.user.username }}</a>
+            <a href="{% url 'autenticacao:logout' %}"><button><i class="material-icons">logout</i>Logout</button></a>
+
+        </div>
+
+    {% else %}
+        <div class="login-button">
+            <a href="{% url 'autenticacao:login' %}"><button><i class="material-icons">login</i>Login</button></a>
+        </div>
+    {% endif %}
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; Direitos reservados ao aluno Afonso Amaral a22207489 - Universidade Lusófona - {% now "Y" %}  </p>
+</footer>
+
+</body>
+</html>

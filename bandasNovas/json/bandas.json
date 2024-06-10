@@ -1,0 +1,264 @@
+{
+  "bands": [
+    {
+      "name": "Maroon 5",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "Songs About Jane",
+          "year": 2002,
+          "songs": [
+            {"name": "Harder to Breathe", "duration": "2:53"},
+            {"name": "This Love", "duration": "3:26"},
+            {"name": "She Will Be Loved", "duration": "4:17"},
+            {"name": "Sunday Morning", "duration": "4:06"}
+          ]
+        },
+        {
+          "title": "V",
+          "year": 2014,
+          "songs": [
+            {"name": "Maps", "duration": "3:10"},
+            {"name": "Animals", "duration": "3:51"},
+            {"name": "Sugar", "duration": "3:55"},
+            {"name": "Feelings", "duration": "3:14"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coldplay",
+      "nationality": "British",
+      "albums": [
+        {
+          "title": "Parachutes",
+          "year": 2000,
+          "songs": [
+            {"name": "Yellow", "duration": "4:29"},
+            {"name": "Shiver", "duration": "4:59"},
+            {"name": "Trouble", "duration": "4:30"},
+            {"name": "Don't Panic", "duration": "2:17"}
+          ]
+        },
+        {
+          "title": "A Rush of Blood to the Head",
+          "year": 2002,
+          "songs": [
+            {"name": "Clocks", "duration": "5:07"},
+            {"name": "The Scientist", "duration": "5:09"},
+            {"name": "In My Place", "duration": "3:48"},
+            {"name": "Politik", "duration": "5:18"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Imagine Dragons",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "Night Visions",
+          "year": 2012,
+          "songs": [
+            {"name": "Radioactive", "duration": "3:08"},
+            {"name": "Demons", "duration": "2:57"},
+            {"name": "It's Time", "duration": "4:00"},
+            {"name": "On Top of the World", "duration": "3:12"}
+          ]
+        },
+        {
+          "title": "Smoke + Mirrors",
+          "year": 2015,
+          "songs": [
+            {"name": "I Bet My Life", "duration": "3:13"},
+            {"name": "Gold", "duration": "3:36"},
+            {"name": "Shots", "duration": "3:52"},
+            {"name": "Dream", "duration": "4:18"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OneRepublic",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "Native",
+          "year": 2013,
+          "songs": [
+            {"name": "Counting Stars", "duration": "4:17"},
+            {"name": "Love Runs Out", "duration": "3:44"},
+            {"name": "I Lived", "duration": "3:55"},
+            {"name": "Something I Need", "duration": "4:01"}
+          ]
+        },
+        {
+          "title": "Waking Up",
+          "year": 2009,
+          "songs": [
+            {"name": "All the Right Moves", "duration": "3:58"},
+            {"name": "Secrets", "duration": "3:44"},
+            {"name": "Marchin On", "duration": "4:12"},
+            {"name": "Good Life", "duration": "4:13"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Script",
+      "nationality": "Irish",
+      "albums": [
+        {
+          "title": "Science & Faith",
+          "year": 2010,
+          "songs": [
+            {"name": "For the First Time", "duration": "4:12"},
+            {"name": "Nothing", "duration": "4:31"},
+            {"name": "The Man Who Can't Be Moved", "duration": "4:01"},
+            {"name": "Breakeven", "duration": "4:21"}
+          ]
+        },
+        {
+          "title": "No Sound Without Silence",
+          "year": 2014,
+          "songs": [
+            {"name": "Superheroes", "duration": "3:59"},
+            {"name": "No Good in Goodbye", "duration": "4:00"},
+            {"name": "Man on a Wire", "duration": "4:05"},
+            {"name": "It's Not Right for You", "duration": "4:22"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Matchbox Twenty",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "Yourself or Someone Like You",
+          "year": 1996,
+          "songs": [
+            {"name": "Push", "duration": "3:59"},
+            {"name": "3AM", "duration": "3:46"},
+            {"name": "Real World", "duration": "3:50"},
+            {"name": "Back 2 Good", "duration": "5:40"}
+          ]
+        },
+        {
+          "title": "Mad Season",
+          "year": 2000,
+          "songs": [
+            {"name": "Bent", "duration": "4:17"},
+            {"name": "If You're Gone", "duration": "4:34"},
+            {"name": "Mad Season", "duration": "5:02"},
+            {"name": "Rest Stop", "duration": "4:29"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Train",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "Save Me, San Francisco",
+          "year": 2009,
+          "songs": [
+            {"name": "Hey, Soul Sister", "duration": "3:37"},
+            {"name": "Marry Me", "duration": "3:25"},
+            {"name": "If It's Love", "duration": "3:59"},
+            {"name": "Save Me, San Francisco", "duration": "4:09"}
+          ]
+        },
+        {
+          "title": "California 37",
+          "year": 2012,
+          "songs": [
+            {"name": "Drive By", "duration": "3:16"},
+            {"name": "50 Ways to Say Goodbye", "duration": "4:08"},
+            {"name": "Bruises", "duration": "3:52"},
+            {"name": "Mermaid", "duration": "3:17"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Fray",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "How to Save a Life",
+          "year": 2005,
+          "songs": [
+            {"name": "Over My Head (Cable Car)", "duration": "3:55"},
+            {"name": "How to Save a Life", "duration": "4:23"},
+            {"name": "Look After You", "duration": "4:28"},
+            {"name": "All at Once", "duration": "3:48"}
+          ]
+        },
+        {
+          "title": "Helios",
+          "year": 2014,
+          "songs": [
+            {"name": "Love Don't Die", "duration": "3:03"},
+            {"name": "Hurricane", "duration": "3:46"},
+            {"name": "Break Your Plans", "duration": "3:51"},
+            {"name": "Our Last Days", "duration": "3:43"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fall Out Boy",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "From Under the Cork Tree",
+          "year": 2005,
+          "songs": [
+            {"name": "Sugar, We're Goin Down", "duration": "3:49"},
+            {"name": "Dance, Dance", "duration": "3:00"},
+            {"name": "Sophomore Slump or Comeback of the Year", "duration": "3:23"},
+            {"name": "I Slept with Someone in Fall Out Boy and All I Got Was This Stupid Song Written About Me", "duration": "3:31"}
+          ]
+        },
+        {
+          "title": "American Beauty/American Psycho",
+          "year": 2015,
+          "songs": [
+            {"name": "Centuries", "duration": "3:51"},
+            {"name": "Uma Thurman", "duration": "3:31"},
+            {"name": "Irresistible", "duration": "3:26"},
+            {"name": "Fourth of July", "duration": "3:44"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kings of Leon",
+      "nationality": "American",
+      "albums": [
+        {
+          "title": "Only by the Night",
+          "year": 2008,
+          "songs": [
+            {"name": "Sex on Fire", "duration": "3:23"},
+            {"name": "Use Somebody", "duration": "3:51"},
+            {"name": "Notion", "duration": "3:00"},
+            {"name": "Closer", "duration": "3:57"}
+          ]
+        },
+        {
+          "title": "Mechanical Bull",
+          "year": 2013,
+          "songs": [
+            {"name": "Supersoaker", "duration": "3:50"},
+            {"name": "Wait for Me", "duration": "3:30"},
+            {"name": "Beautiful War", "duration": "5:09"},
+            {"name": "Temple", "duration": "4:10"}
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bandas/estilos.css' %}">
+    <title>Bandas</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Bandas</h1>
+            <a href="{% url 'bandasNovas:bandas' %}"><i class="material-icons">home</i>Página Inicial</a>
+            <a href="{% url 'curso:cursos' %}"><i class="material-icons">school</i>Curso</a>
+            <a href="{% url 'portfolio:landing' %}"><i class="material-icons">folder</i>Portfolio</a>
+            <a href="#"><i class="material-icons">article</i>Artigos</a>
+            <a href="{% url 'meteo:tempo_lisboa' %}"><i class="material-icons">wb_sunny</i>Meteorologia</a>
+            {% if request.user.is_authenticated %}
+                <div class="username">
+                    <i class="material-icons">person</i>
+                    <p>{{ request.user.username }}</p>
+                </div>
+                <a href="{% url 'autenticacao:logout' %}"><button><i class="material-icons">logout</i>Logout</button></a>
+            {% else %}
+                <a href="{% url 'autenticacao:login' %}"><button><i class="material-icons">login</i>Login</button></a>
+            {% endif %}
+        </div>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>&copy; {% now "Y" %} Direitos reservados ao autor.</p>
+    </footer>
+</body>
+</html>

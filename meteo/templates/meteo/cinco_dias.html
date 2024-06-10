@@ -1,0 +1,41 @@
+{% extends 'meteo/layout.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Previsão semanal</h1>
+    <form method="POST" action="{% url 'meteo:cinco_dias' %}">
+        {% csrf_token %}
+        <label for="cidade_escolhida">Escolha uma cidade:</label>
+        <select id="cidade_escolhida" name="cidade_escolhida">
+            {% for cidade in cidades %}
+                <option value="{{ cidade.local }}">{{ cidade.local }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Ver Previsão</button>
+    </form>
+
+    <div class="forecast">
+        <h2>Previsão para a cidade de {{ cidade }} para os próximos 5 dias</h2>
+        <div class="forecast-container">
+            {% for previsao in previsoes %}
+                {% if forloop.first %}
+                    <div class="day-forecast main-forecast">
+                        <h3>{{ previsao.date }}</h3>
+                        <img src="{% static previsao.icon %}" width="100px" alt="Weather Icon">
+                        <p>{{ previsao.description }}</p>
+                        <p>Min Temp: {{ previsao.tMin }}°C</p>
+                        <p>Max Temp: {{ previsao.tMax }}°C</p>
+                    </div>
+                {% else %}
+                    <div class="day-forecast">
+                        <h3>{{ previsao.date }}</h3>
+                        <img src="{% static previsao.icon %}" width="100px" alt="Weather Icon">
+                        <p>{{ previsao.description }}</p>
+                        <p>Min Temp: {{ previsao.tMin }}°C</p>
+                        <p>Max Temp: {{ previsao.tMax }}°C</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

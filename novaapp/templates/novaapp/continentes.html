@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Web</title>
+    <style>
+        body {
+            background: white;
+            color: black;
+            font-family: Arial, sans-serif; /* Fonte diferente */
+        }
+
+        h2.continente {
+            font-family: "Times New Roman", Times, serif; /* Fonte diferente para os títulos dos continentes */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Continentes</h1>
+    </header>
+
+    <main>
+
+        <h2 class="continente">Continentes do Mundo</h2>
+        <ul>
+            <li>África</li>
+            <nav>
+                <a href="{% url 'novaapp:paisesAfrica' %}">Paises de África</a>
+            </nav>
+            <li>América</li>
+            <nav>
+                <a href="{% url 'novaapp:paisesAmerica' %}">Paises da America</a>
+            </nav>
+            <li>Antártica</li>
+            <nav>
+                <a href="{% url 'novaapp:paisesAntartica' %}">Antártica</a>
+            </nav>
+            <li>Ásia</li>
+            <nav>
+                <a href="{% url 'novaapp:paisesAsia' %}">Paises da Ásia</a>
+            </nav>
+            <li>Europa</li>
+            <nav>
+                <a href="{% url 'novaapp:paisesEuropa' %}">Paises da Europa</a>
+            </nav>
+            <li>Oceania</li>
+            <nav>
+                <a href="{% url 'novaapp:paisesOceania' %}">Países da Oceania</a>
+            </nav>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; Conheçendo o mundo através da net</p>
+    </footer>
+
+</body>
+</html>

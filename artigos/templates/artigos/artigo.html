@@ -1,0 +1,24 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}Artigo{% endblock %}
+
+{% block content %}
+    <h2>{{ artigo.titulo }}</h2>
+    <p>{{ artigo.conteudo }}</p>
+    <h3>Comentários</h3>
+    <ul>
+        {% for comentario in comentarios %}
+            <li>{{ comentario.conteudo }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Avaliações</h3>
+    <ul>
+        {% for avaliacao in avaliacao %}
+            <li>{{ avaliacao.nota }} - {{ avaliacao.comentario }}</li>
+        {% endfor %}
+    </ul>
+    {% if is_editor %}
+        <a href="{% url 'artigos:edita_artigo' artigo.id %}"><button>Editar Artigo</button></a>
+        <a href="{% url 'artigos:apaga_artigo' artigo.id %}"><button>Apagar Artigo</button></a>
+    {% endif %}
+{% endblock %}

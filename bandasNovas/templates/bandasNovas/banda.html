@@ -1,0 +1,44 @@
+{% extends 'bandasNovas/layout.html' %}
+
+{% block content %}
+    <div style="background-color: #1a1a1a; padding: 20px; border-radius: 10px;">
+        <h2 style="color: #ffffff;">{{ banda }}</h2>
+        <p style="color: #ffffff;"><strong>Nacionalidade:</strong> {{ banda.nacionalidade_da_banda }}</p>
+
+        <p style="color: #ffffff;"><strong>Álbuns:</strong></p>
+        <ul style="list-style-type: none; padding: 0;">
+            <div class="album-container">
+                {% for album in albums %}
+                    <div class="album">
+                        <a href="{% url 'bandasNovas:album' album.id %}">
+                            <img src="{{ album.capa.url }}" alt="{{ album.titulo }}">
+                        </a>
+                        <span>{{ album.titulo }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </ul>
+
+        {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'bandasNovas:edita_banda' banda.id %}">
+                <input type="submit" value="Editar informação da Banda">
+            </a>
+        {% endif %}
+
+        {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'bandasNovas:cria_album' banda.id %}">
+                <input type="submit" value="Criar novo album da Banda">
+            </a>
+        {% endif %}
+
+        {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'bandasNovas:apaga_banda' banda.id %}">
+                <button>Apagar Banda e os seus albuns e musicas</button>
+            </a>
+        {% endif %}
+    </div>
+
+    <style>
+
+    </style>
+{% endblock %}

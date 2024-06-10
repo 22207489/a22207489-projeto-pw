@@ -1,0 +1,27 @@
+{% extends 'festivais/layout.html' %}
+<html lang="en">
+    {% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Festivais por Localização</title>
+</head>
+<body>
+    <h1>Lista de Festivais por Localização</h1>
+
+    {% for localizacao in localizacoes %}
+        <h2>{{ localizacao.nome }}</h2>
+        <ul>
+            {% for festival in festivais.all %}
+                {% if festival.localizacao == localizacao %}
+                <li>
+                    <a href="{% url 'festivais:festival' festival.id %}">{{ festival.nome }} </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

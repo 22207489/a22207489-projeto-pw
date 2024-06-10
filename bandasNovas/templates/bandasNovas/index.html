@@ -1,0 +1,31 @@
+{% extends 'bandasNovas/layout.html' %}
+
+{% block content %}
+
+    <div style="position: relative; background-color: #1a1a1a; padding: 10px; border-radius: 10px">
+
+        {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'bandasNovas:cria_banda' %}" class="create-band-button">
+                <input type="submit" value="Criar nova Banda">
+            </a>
+        {% endif %}
+
+        <h2 style="color: #ffffff;">Lista de Bandas</h2>
+
+        <p style="color: #ffffff;"><strong>Total de Bandas:</strong> {{ bandas|length }}</p>
+
+        <ul style="list-style-type: none; padding: 0;">
+            <div class="artists-container">
+                {% for banda in bandas %}
+                    <div class="artist">
+                        <a href="{% url 'bandasNovas:banda' banda.id %}">
+                            <img src="{{ banda.foto_da_banda.url }}" alt="{{ banda.nome }}">
+                        </a>
+                        <span>{{ banda.nome }}</span>
+                    </div>
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
+
+{% endblock %}

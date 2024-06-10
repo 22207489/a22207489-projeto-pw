@@ -1,0 +1,307 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #24272b; /* Dark Gray */
+            margin: 0;
+            padding: 0;
+            color: #FFFFFF; /* White */
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /* Full viewport height */
+            width: 100vw; /* Full viewport width */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            width: 100%; /* Ensure the container takes the full width */
+            height: 100%; /* Ensure the container takes the full height */
+        }
+
+        .navbar {
+            background-color: #24272b; /* Dark Gray */
+            color: #FFFFFF; /* White */
+            width: 100%;
+            padding: 15px; /* Adjusted padding for thinner navbar */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #5A5A5A; /* Medium Gray */
+            height: 70px; /* Set a fixed height for the navbar */
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5em; /* Adjusted font size */
+            flex: 0 0 auto; /* Ensure the title does not shrink */
+        }
+
+        .navbar .nav-buttons {
+            display: flex;
+            gap: 10px; /* Adjusted spacing between buttons */
+            justify-content: flex-end; /* Align buttons to the end */
+            margin-right: 20px; /* Add margin to the right to shift buttons left */
+        }
+
+        .navbar a, .navbar button {
+            color: #FFFFFF; /* White */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px; /* Adjusted padding for buttons */
+            font-size: 0.9em; /* Adjusted font size */
+            min-width: 100px; /* Set a minimum width for the buttons */
+            justify-content: center; /* Center the text inside the buttons */
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar button {
+            background-color: #5A5A5A; /* Medium Gray */
+            border: none;
+            color: #FFFFFF; /* White */
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 5px;
+            min-width: 100px; /* Set a minimum width for the buttons */
+            justify-content: center; /* Center the text inside the buttons */
+        }
+
+        .navbar a:hover, .navbar button:hover {
+            background-color: #3A3F44; /* Slightly lighter gray for hover effect */
+        }
+
+        .navbar a .material-icons, .navbar button .material-icons {
+            margin-right: 5px; /* Adjusted margin */
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Closer spacing between icon and username */
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            width: 100%; /* Ensure the main section takes the full width */
+            height: calc(100% - 70px); /* Adjust for navbar height */
+        }
+
+        .left-panel {
+            flex: 1;
+            max-width: 40%; /* Increase the width of the left panel */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #24272b; /* Dark Gray */
+            padding: 20px; /* Adjust padding */
+            height: 100%; /* Ensure the left panel takes the full height */
+            overflow: auto; /* Enable scrolling if content overflows */
+        }
+
+        .left-panel iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .right-panel {
+            flex: 1;
+            max-width: 60%; /* Adjust the width of the right panel */
+            padding: 40px; /* Increased padding for better spacing */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: #2E3135; /* Slightly lighter dark gray */
+            height: 100%; /* Ensure the right panel takes the full height */
+            overflow: auto; /* Enable scrolling if content overflows */
+            position: relative; /* For absolute positioning of the clock */
+        }
+
+        .right-panel h2, .right-panel h3, .right-panel h4 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .right-panel h2 {
+            color: #A8DADC; /* Light Blue */
+            font-size: 1.8em; /* Adjusted font size */
+        }
+
+        .right-panel h3 {
+            color: #81A1C1; /* Lighter Blue */
+            font-size: 1.4em; /* Adjusted font size */
+        }
+
+        .right-panel h4 {
+            color: #E5E9F0; /* Light Gray */
+            font-size: 1.2em; /* Adjusted font size */
+        }
+
+        .right-panel p {
+            color: #D8DEE9; /* Light Gray */
+            line-height: 1.5; /* Improved line height for readability */
+        }
+
+        .right-panel a {
+            color: #81A1C1; /* Lighter Blue */
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #81A1C1;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .right-panel a:hover {
+            background-color: #81A1C1;
+            color: #24272b;
+        }
+
+        .profile-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .clock {
+            font-size: 24px;
+            color: #E5E9F0;
+            position: absolute;
+            top: 20px; /* Position at the top */
+            right: 20px; /* Position at the right */
+        }
+
+        .light-mode {
+            background-color: #F8F9FA; /* Very Light Gray */
+            color: #343A40; /* Dark Gray */
+        }
+
+        .light-mode .navbar {
+            background-color: #FFFFFF; /* White */
+            color: #343A40; /* Dark Gray */
+            border-bottom: 1px solid #CED4DA; /* Gray */
+        }
+
+        .light-mode .left-panel {
+            background-color: #E0E0E0; /* Lighter Gray for light mode */
+        }
+
+        .light-mode .right-panel {
+            background-color: #FFFFFF; /* White */
+        }
+
+        .light-mode .navbar button {
+            background-color: #FFFFFF; /* Bright Blue */
+            color: #000000; /* Black text */
+        }
+
+        .light-mode .user-info {
+            color: #007BFF; /* Bright Blue */
+        }
+
+        .light-mode .navbar a {
+            color: #343A40; /* Dark Gray */
+        }
+
+        .light-mode .navbar a .material-icons {
+            color: #007BFF; /* Bright Blue */
+        }
+        .light-mode .navbar button:hover {
+            background-color: #F8F9FA; /* Darker Gray */
+        }
+
+
+        .light-mode .navbar a:hover .material-icons {
+            color: #0056b3; /* Dark Blue */
+        }
+
+        .light-mode .right-panel h2 {
+            color: #007BFF; /* Bright Blue */
+        }
+
+        .light-mode .right-panel p, .light-mode .right-panel a {
+            color: #343A40; /* Dark Gray */
+        }
+    </style>
+    <title>Portfolio</title>
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <div class="navbar">
+            <h1>Portfolio</h1>
+            <div class="nav-buttons">
+                <a href="{% url 'portfolio:landing' %}"><i class="material-icons">home</i>Home</a>
+                <a href="{% url 'curso:cursos' %}"><i class="material-icons">school</i>Curso</a>
+                <a href="{% url 'bandasNovas:bandas' %}"><i class="material-icons">library_music</i>Bandas</a>
+                <a href="#"><i class="material-icons">article</i>Artigos</a>
+                <a href="{% url 'meteo:tempo_lisboa' %}"><i class="material-icons">wb_sunny</i>Meteorologia</a>
+                {% if request.user.is_authenticated %}
+                    <div class="user-info">
+                        <i class="material-icons">person</i>
+                        <p>{{ request.user.username }}</p>
+                    </div>
+                    <a href="{% url 'autenticacao:logout' %}"><button><i class="material-icons">logout</i>Logout</button></a>
+                {% else %}
+                    <a href="{% url 'autenticacao:login' %}"><button><i class="material-icons">login</i>Login</button></a>
+                {% endif %}
+                <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+            </div>
+        </div>
+        <main>
+            <div class="left-panel">
+                <iframe src="{% static imagem %}" title="PDF Document"></iframe>
+            </div>
+            <div class="right-panel">
+                <div id="clock" class="clock"></div> <!-- Clock is always visible -->
+                <h2>Sobre mim</h2>
+                <h3>Do lado esquerdo pode ver o meu resume e fazer o seu download assim como imprimir</h3>
+                <h2>Informática de Gestão</h2>
+                <h3>Neste momento encontro-me a realizar o curso de Informática de Gestão na Lusófona e estou no segundo semestre do segundo ano</h3>
+
+                <h2>Ensino Secundário</h2>
+                <h3>Escola Secundária Professor José Augusto Lucas</h3>
+                <h4>Ensino secundário terminado com média de 15,5 onde aprendi e fortaleci o meu conhecimento na área das matemáticas e informática.</h4>
+
+                <h2>Experiência Profissional</h2>
+                <h3>Neste momento também me encotro a dar explicações e apoios de todas as disciplinas do 1º ao 9º a alunos num centro de estudos</h3>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
+        }
+
+        function updateClock() {
+            const clockDiv = document.getElementById('clock');
+            const now = new Date();
+            clockDiv.innerHTML = now.toLocaleTimeString();
+            setTimeout(updateClock, 1000);
+        }
+
+        // Start the clock when the page loads
+        document.addEventListener('DOMContentLoaded', (event) => {
+            updateClock();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}Autor{% endblock %}
+
+{% block content %}
+    <h2>{{ autor.nome }}</h2>
+    <h3>Artigos</h3>
+    <ul>
+        {% for artigo in artigos %}
+            <li><a href="{% url 'artigos:artigo' artigo.id %}">{{ artigo.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+    {% if is_editor %}
+        <a href="{% url 'artigos:edita_autor' autor.id %}"><button>Editar Autor</button></a>
+        <a href="{% url 'artigos:apaga_autor' autor.id %}"><button>Apagar Autor</button></a>
+    {% endif %}
+{% endblock %}

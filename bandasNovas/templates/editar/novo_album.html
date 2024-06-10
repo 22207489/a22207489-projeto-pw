@@ -1,0 +1,17 @@
+{% extends 'bandasNovas/layout.html' %}
+
+{% block content %}
+    <h3>Nova Disciplina</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+    <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+      {% csrf_token %}   <!-- obrigatório nos forms Django -->
+      <table>
+          {{ form }}
+      </table>
+      <input type="submit" value="Criar Album">
+
+    </form>
+
+{% endblock %}

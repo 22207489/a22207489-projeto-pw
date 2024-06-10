@@ -1,0 +1,15 @@
+{% extends 'artigos/layout.html' %}
+
+{% block title %}Avaliações{% endblock %}
+
+{% block content %}
+    <h2>Avaliações do Artigo: {{ artigo.titulo }}</h2>
+    <ul>
+        {% for avaliacao in avaliacao %}
+            <li>{{ avaliacao.nota }} - {{ avaliacao.comentario }}</li>
+        {% endfor %}
+    </ul>
+    {% if is_editor %}
+        <a href="{% url 'artigos:novo_avaliacao' %}"><button>Nova Avaliação</button></a>
+    {% endif %}
+{% endblock %}

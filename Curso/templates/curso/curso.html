@@ -1,0 +1,72 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <div class="course-details">
+        <h2>{{ curso }}</h2>
+
+        <div class="course-info">
+            <p><strong>Código do Curso:</strong> {{ curso.codigo_curso }}</p>
+
+            <p><strong>Apresentação do Curso:</strong></p>
+            <p>{{ curso.apresentacao }}</p>
+
+            <p><strong>Objetivos do Curso:</strong></p>
+            <p>{{ curso.objetivos }}</p>
+
+            <p><strong>Condições de Acesso:</strong></p>
+            <p>{{ curso.condicoes_de_acesso }}</p>
+
+            <p><strong>Oportunidades de Carreira:</strong></p>
+            <p>{{ curso.oportunidades_de_carreira }}</p>
+
+            <p><strong>Competências Adquiridas:</strong></p>
+            <p>{{ curso.competencias }}</p>
+
+            <p><strong>Créditos Totais:</strong> {{ curso.creditos_do_curso }}</p>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'curso:edita_curso' curso.id %}">
+            <input type="submit" value="Editar informação do curso">
+        </a>
+         {% endif %}
+
+        <div class="scientific-areas">
+            <p>Este curso contém {{ areas_cientificas|length }} área(s) científica(s):</p>
+            <ul>
+                {% for area in areas_cientificas %}
+                    <li>
+                        <a href="{% url 'curso:area' area.id %}" class="area-link">{{ area.nome_area_cientifica }}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'curso:nova_area' curso.id  %}">
+                <input type="submit" value="Criar nova Área Cientifica">
+            </a>
+            {% endif %}
+             {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'curso:apaga_curso' curso.id %}">
+                <button>Apagar Curso</button>
+            </a>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+<style>
+    .scientific-areas {
+        margin-bottom: 20px; /* Add margin to the bottom of the section */
+    }
+
+    .area-link {
+        color: #007bff; /* Blue color for links */
+        text-decoration: none; /* Remove default underline */
+        transition: color 0.3s; /* Smooth color transition on hover */
+    }
+
+    .area-link:hover {
+        color: #0056b3; /* Darker blue color on hover */
+        text-decoration: underline; /* Underline on hover */
+    }
+</style>

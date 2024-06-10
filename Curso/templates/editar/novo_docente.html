@@ -1,0 +1,15 @@
+{% block content %}
+    <h3>Novo Projeto</h3>
+
+    <form action="" method="post" enctype='multipart/form-data'>
+        <!-- enctype deve ser definido se houver submissão de ficheiros ou imagens -->
+
+        {% csrf_token %} <!-- obrigatório nos forms Django -->
+        <table>
+            {{ form }} <!-- insere input para cada atributo da classe Autor, numa tabela -->
+        </table>
+        <p class="note">Pressione Ctrl para selecionar mais que uma</p>
+        <input type="submit" value="Criar Docente">
+    </form>
+
+{% endblock %}

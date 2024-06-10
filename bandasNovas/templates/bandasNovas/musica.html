@@ -1,0 +1,25 @@
+{% extends 'bandasNovas/layout.html' %}
+
+{% block content %}
+    <div style="background-color: #1a1a1a; padding: 20px; border-radius: 10px;">
+        <h3 style="color: #ffffff;">{{ musica }}</h3>
+
+        <p style="color: #ffffff;"><strong>Duração:</strong> {{ musica.duracao }}</p>
+        <p style="color: #ffffff;"><strong>Link da música:</strong> <a href="{{ musica.link }}" style="color: #ffffff; text-decoration: none;">{{ musica.link }}</a></p>
+        {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'bandasNovas:edita_musica' musica.id %}">
+                <input type="submit" value="Editar informação da Musica">
+            </a>
+        {% endif %}
+    </div>
+
+    {% if request.user.is_authenticated and is_editor %}
+        <a href="{% url 'bandasNovas:apaga_musica' musica.id %}">
+            <input type="submit" value="Apagar musica">
+        </a>
+    {% endif %}
+
+    <style>
+    @import url(estilo.css)
+    </style>
+{% endblock %}

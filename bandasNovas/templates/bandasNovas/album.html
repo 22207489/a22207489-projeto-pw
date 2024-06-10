@@ -1,0 +1,43 @@
+{% extends 'bandasNovas/layout.html' %}
+
+{% block content %}
+    <div style="background-color: #1a1a1a; padding: 70px; border-radius: 10px;">
+            <h2 style="color: #ffffff;">{{ album }}</h2>
+
+            <img src='{{ album.capa.url}}' width="300px">
+
+
+
+        <p style="color: #ffffff;"><strong>Ano de Lançamento:</strong> {{ album.ano_de_lancamento }}</p>
+
+        <p style="color: #ffffff;"><strong>Músicas:</strong></p>
+         <div class="music-container">
+            {% for musica in musicas %}
+
+                    <a href="{% url 'bandasNovas:musica' musica.id %}">
+                        <button class="spotify-green-button">{{ musica.nome }}</button>
+
+                    </a>
+
+            {% endfor %}
+
+        </div>
+
+        {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'bandasNovas:edita_album' album.id %}">
+                <input type="submit" value="Editar informação do Album">
+            </a>
+            <a href="{% url 'bandasNovas:cria_musica' album.id %}">
+                <input type="submit" value="Criar nova musica do Album">
+            </a>
+            <a href="{% url 'bandasNovas:apaga_album' album.id %}">
+                <button>Apagar album e suas musicas</button>
+            </a>
+        {% endif %}
+    </div>
+
+
+    <style>
+
+    </style>
+{% endblock %}

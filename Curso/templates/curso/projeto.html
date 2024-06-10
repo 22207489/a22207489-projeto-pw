@@ -1,0 +1,66 @@
+{% extends 'curso/layout.html' %}
+
+{% block content %}
+    <div class="projeto-details">
+        <h2>{{ projeto }}</h2>
+
+        <div class="projeto-info">
+            <p><strong>Descrição do Projeto:</strong> {{ projeto.descricao }}</p>
+            <p><strong>Conceitos Aplicados no Projeto:</strong> {{ projeto.conceitos_aplicados }}</p>
+            <p><strong>Imagem:</strong> {{ projeto.imagem }}</p>
+            <p><strong>Link do YouTube:</strong> <a href="{{ projeto.link_youtube }}" class="projeto-link">{{ projeto.link_youtube }}</a></p>
+            <p><strong>Link do GitHub:</strong> <a href="{{ projeto.link_github }}" class="projeto-link">{{ projeto.link_github }}</a></p>
+        </div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'curso:edita_projeto' projeto.id %}">
+            <input type="submit" value="Editar informação do Projeto">
+        </a>
+        {% endif %}
+
+
+        <div class="linguagens-utilizadas">
+            <p>Linguagens Utilizadas neste Projeto:</p>
+            <ul>
+                {% for linguagem in projeto.tecnologias_utilizadas.all %}
+                    <li>{{ linguagem.nome_de_linguagem }}</li>
+                {% endfor %}
+            </ul>
+
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'curso:nova_linguagem' projeto.id %}">
+                <input type="submit" value="Criar nova Linguagem">
+            </a>
+            {% endif %}
+            {% if request.user.is_authenticated and is_editor %}
+            <a href="{% url 'curso:apaga_projeto' projeto.id %}">
+                <button>Apagar Projeto</button>
+            </a>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+<style>
+    .projeto-details {
+        padding: 20px;
+    }
+
+    .projeto-info {
+        margin-bottom: 20px;
+    }
+
+    .linguagens-utilizadas {
+        margin-top: 20px;
+    }
+
+    .projeto-link {
+        color: #007bff; /* Blue color for links */
+        text-decoration: none; /* Remove default underline */
+        transition: color 0.3s; /* Smooth color transition on hover */
+    }
+
+    .projeto-link:hover {
+        color: #0056b3; /* Darker blue color on hover */
+        text-decoration: underline; /* Underline on hover */
+    }
+</style>

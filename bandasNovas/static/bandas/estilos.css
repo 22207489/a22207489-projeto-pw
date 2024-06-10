@@ -1,0 +1,302 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000; /* Changed from #f8f9fa to #1a1a1a for a dark background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.sidebar {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    width: 200px;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h1 {
+    margin-top: 0;
+}
+
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar a .material-icons {
+    margin-right: 10px;
+}
+
+.sidebar a:hover .material-icons {
+    color: #1DB954;
+}
+
+.sidebar button {
+    background-color: #1a1a1a;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.sidebar button:hover {
+    background-color: #0a0a0a;
+}
+
+main {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #1a1a1a; /* Added background color for the main content */
+    color: #ffffff; /* Ensures text is white and visible */
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 310px);
+    left: 270px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .sidebar button {
+        margin-top: 0;
+        font-size: 10px;
+        padding: 8px 16px;
+    }
+    main {
+        margin-left: 0;
+        padding: 10px;
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.username i {
+    margin-right: 10px;
+}
+
+.username:hover i {
+    color: #1DB954;
+}
+
+.artists-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.artist {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.artist a {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: transform 0.3s, border-color 0.3s;
+    background-color: #fff;
+    border: 5px solid transparent;
+}
+
+.artist a:hover {
+    transform: scale(1.1);
+    border-color: #1DB954;
+}
+
+.artist img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.artist span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.create-band-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.create-band-button:hover {
+    background-color: #0056b3;
+}
+
+.album-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.album {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.album a {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: transform 0.3s, border-color 0.3s;
+    background-color: #fff;
+    border: 5px solid transparent;
+}
+
+.album a:hover {
+    transform: scale(1.1);
+    border-color: #1DB954;
+}
+
+.album img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.album span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.spotify-green-button {
+    background-color: #0a0a0a;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.spotify-green-button:hover {
+    background-color: #1DB954;
+}
+
+.music-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.music-box {
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.music-box a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.music-box a:hover {
+    color: #007bff;
+}
+
+.create-album-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.create-album-button:hover {
+    background-color: #0056b3;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #007bff;
+}
